@@ -27,13 +27,6 @@ Exploit a CSRF vulnerability where tokens are single-use, but can be stolen from
 
 ---
 
-## ✅ Lab Solved
-
-- The server accepted a CSRF token stolen from another session.
-- A CSRF attack was successfully executed even with single-use tokens due to session mismanagement.
-
----
-
 ## 🧠 Key Takeaways
 
 - CSRF tokens must not be predictable or reusable across users.
