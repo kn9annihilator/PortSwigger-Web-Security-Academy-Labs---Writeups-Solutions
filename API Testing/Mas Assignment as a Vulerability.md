@@ -36,7 +36,7 @@ HTTP/1.1 200 OK
 
 2. Mass Assignment as a Flaw
 
-    Malicious request adding extra fields:
+ Malicious request adding extra fields:
 ```c
 PATCH /api/users/123
 Content-Type: application/json
@@ -46,14 +46,16 @@ Content-Type: application/json
   "isAdmin": true
 }
 ```
-    If no filtering is done, the framework blindly maps:
+If no filtering is done, the framework blindly maps:
+
 ```c
 user.update({
   "username": "attacker",
   "isAdmin": true  # Sensitive field accidentally updated
 })
 ```
-    Resulting response:
+Resulting response:
+
 ```c
 HTTP/1.1 200 OK
 {
@@ -65,13 +67,13 @@ HTTP/1.1 200 OK
 ```
 3. Why This Happens
 
-    The API does not validate or restrict which fields can be updated.
+The API does not validate or restrict which fields can be updated.
 
-    Framework mass assignment features treat all fields equally.
+Framework mass assignment features treat all fields equally.
 
 4. How to Fix
 
-    Use a whitelist to only allow permitted fields:
+Use a whitelist to only allow permitted fields:
 ```c
 user.update(request.body.only(['username', 'email']))
 ```
