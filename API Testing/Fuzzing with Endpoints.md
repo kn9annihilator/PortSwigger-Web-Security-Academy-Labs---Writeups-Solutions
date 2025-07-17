@@ -34,14 +34,14 @@ Right-click the request → "Send to Intruder"
 
 Step 3: Configure Intruder positions
 
-    Select just the word update in the path as the fuzzing position 
-    ```c
+Select just the word update in the path as the fuzzing position 
+```python
     (highlight update and click “Add §”).
-    ```
+```
 
 Your target request path now looks like:
 
-```c
+```python
 PUT /api/user/§update§
 ```
 
