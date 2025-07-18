@@ -119,31 +119,3 @@ Look for:
 
     ![alt text](image.png)
 
-
-1. **Perimeter Layer**
-   - Fencing and gates
-   - Vehicle barriers
-   - Security checkpoints
-   - CCTV surveillance
-   - Intrusion detection systems
-
-2. **Facility Access Layer**
-   - 24/7 on-site security staff
-   - Badge access systems
-   - Biometric scanners (palm/iris)
-   - PIN entry and authentication
-   - Visitor screening and escort policies
-
-3. **Server Room Layer**
-   - Mantraps (double-door systems)
-   - Rack-level physical locks
-   - Zone-restricted access
-   - Internal surveillance systems
-
-4. **Hardware and Data Layer**
-   - Encrypted drives
-   - Controlled hardware replacement
-   - Secure decommissioning
-   - Physical data destruction procedures
-
-> Each layer is designed to be independently secure, monitored, and auditable — supporting AWS’s defense-in-depth approach.
