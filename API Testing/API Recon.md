@@ -120,48 +120,30 @@ Look for:
     ![alt text](image.png)
 
 
+1. **Perimeter Layer**
+   - Fencing and gates
+   - Vehicle barriers
+   - Security checkpoints
+   - CCTV surveillance
+   - Intrusion detection systems
 
-### 📊 IAM Capabilities vs. Boundaries
+2. **Facility Access Layer**
+   - 24/7 on-site security staff
+   - Badge access systems
+   - Biometric scanners (palm/iris)
+   - PIN entry and authentication
+   - Visitor screening and escort policies
 
-| **Aspect**               | **IAM Can Do**                                                   | **IAM Cannot Do**                                               |
-|--------------------------|------------------------------------------------------------------|------------------------------------------------------------------|
-| **Identity Management**  | Create users, groups, roles                                      | Control OS-level actions on AWS resources                       |
-| **Access Control**       | Define fine-grained permissions via policies                    | Monitor or detect insider threats                               |
-| **Temporary Credentials**| Issue temporary tokens using IAM roles + STS                    | Enforce session timeout for long-term IAM users                 |
-| **Policy Enforcement**   | Attach identity/resource policies, conditions, tags             | Override service defaults or hard limits                        |
-| **Cross-Account Access** | Enable role assumption across accounts                          | Restrict actions of the root user via IAM policies              |
-| **Federated Identity**   | Allow SSO access with external IdPs via IAM Identity Center     | Audit or visualize access natively (needs CloudTrail/Analyzer)  |
-| **Least Privilege**      | Enforce minimum access using custom policies                    | Encrypt data or manage keys (handled by AWS KMS)                |
-| **Scope of Control**     | Works across most AWS services with IAM integration             | Control network-level access (use VPC, SGs, NACLs instead)      |
+3. **Server Room Layer**
+   - Mantraps (double-door systems)
+   - Rack-level physical locks
+   - Zone-restricted access
+   - Internal surveillance systems
 
+4. **Hardware and Data Layer**
+   - Encrypted drives
+   - Controlled hardware replacement
+   - Secure decommissioning
+   - Physical data destruction procedures
 
-┌────────────────────────────────────────────────────┐
-│ Perimeter Security Layer │
-│ - Fencing, vehicle barriers │
-│ - Security checkpoints │
-│ - Surveillance cameras (CCTV) │
-│ - Intrusion detection systems │
-└────────────────────────────────────────────────────┘
-↓
-┌────────────────────────────────────────────────────┐
-│ Facility Access Layer │
-│ - 24/7 security guards │
-│ - Badge readers and PIN access │
-│ - Biometric scanners (e.g., palm/iris) │
-│ - Visitor sign-in and escort policies │
-└────────────────────────────────────────────────────┘
-↓
-┌────────────────────────────────────────────────────┐
-│ Server Room Layer │
-│ - Mantraps and dual authentication doors │
-│ - Rack-level physical locks │
-│ - Zoned access by job role │
-│ - Surveillance inside server areas │
-└────────────────────────────────────────────────────┘
-↓
-┌────────────────────────────────────────────────────┐
-│ Hardware and Data Layer │
-│ - Encrypted storage devices │
-│ - Controlled hardware decommissioning │
-│ - Data-wiping and physical destruction protocols │
-└────────────────────────────────────────────────────┘
+> Each layer is designed to be independently secure, monitored, and auditable — supporting AWS’s defense-in-depth approach.
