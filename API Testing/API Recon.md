@@ -118,3 +118,17 @@ Look for:
     Inconsistent status codes (e.g., 200 OK for failed login)
 
     ![alt text](image.png)
+
+
+
+    ### 📊 Credentials vs. Policies: A Comparison
+
+| **Aspect**        | **Credentials**                                 | **Policies**                                      |
+|------------------|--------------------------------------------------|---------------------------------------------------|
+| **Purpose**       | Prove who is making the request                 | Define what actions are allowed                   |
+| **Examples**      | Passwords, access keys, temporary tokens        | IAM policies (JSON), SCPs, boundaries             |
+| **Scope**         | Identity authentication                         | Resource access control                           |
+| **Lifetime**      | Can be long-term or temporary                   | Persistent until modified or deleted              |
+| **Managed By**    | IAM users, roles, federated identities          | Admins via IAM or AWS Organizations               |
+| **Security Risk** | Higher (if long-term)                           | Lower (policy misconfiguration is a concern)      |
+| **Used For**      | Console login, CLI/API access                   | Permission enforcement and restriction            |
