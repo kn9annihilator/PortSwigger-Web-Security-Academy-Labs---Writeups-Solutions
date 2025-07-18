@@ -121,14 +121,16 @@ Look for:
 
 
 
-    ### 📊 Credentials vs. Policies: A Comparison
+### 📊 IAM Capabilities vs. Boundaries
 
-| **Aspect**        | **Credentials**                                 | **Policies**                                      |
-|------------------|--------------------------------------------------|---------------------------------------------------|
-| **Purpose**       | Prove who is making the request                 | Define what actions are allowed                   |
-| **Examples**      | Passwords, access keys, temporary tokens        | IAM policies (JSON), SCPs, boundaries             |
-| **Scope**         | Identity authentication                         | Resource access control                           |
-| **Lifetime**      | Can be long-term or temporary                   | Persistent until modified or deleted              |
-| **Managed By**    | IAM users, roles, federated identities          | Admins via IAM or AWS Organizations               |
-| **Security Risk** | Higher (if long-term)                           | Lower (policy misconfiguration is a concern)      |
-| **Used For**      | Console login, CLI/API access                   | Permission enforcement and restriction            |
+| **Aspect**               | **IAM Can Do**                                                   | **IAM Cannot Do**                                               |
+|--------------------------|------------------------------------------------------------------|------------------------------------------------------------------|
+| **Identity Management**  | Create users, groups, roles                                      | Control OS-level actions on AWS resources                       |
+| **Access Control**       | Define fine-grained permissions via policies                    | Monitor or detect insider threats                               |
+| **Temporary Credentials**| Issue temporary tokens using IAM roles + STS                    | Enforce session timeout for long-term IAM users                 |
+| **Policy Enforcement**   | Attach identity/resource policies, conditions, tags             | Override service defaults or hard limits                        |
+| **Cross-Account Access** | Enable role assumption across accounts                          | Restrict actions of the root user via IAM policies              |
+| **Federated Identity**   | Allow SSO access with external IdPs via IAM Identity Center     | Audit or visualize access natively (needs CloudTrail/Analyzer)  |
+| **Least Privilege**      | Enforce minimum access using custom policies                    | Encrypt data or manage keys (handled by AWS KMS)                |
+| **Scope of Control**     | Works across most AWS services with IAM integration             | Control network-level access (use VPC, SGs, NACLs instead)      |
+
