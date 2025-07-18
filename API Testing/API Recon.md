@@ -134,3 +134,34 @@ Look for:
 | **Least Privilege**      | Enforce minimum access using custom policies                    | Encrypt data or manage keys (handled by AWS KMS)                |
 | **Scope of Control**     | Works across most AWS services with IAM integration             | Control network-level access (use VPC, SGs, NACLs instead)      |
 
+
+┌────────────────────────────────────────────────────┐
+│ Perimeter Security Layer │
+│ - Fencing, vehicle barriers │
+│ - Security checkpoints │
+│ - Surveillance cameras (CCTV) │
+│ - Intrusion detection systems │
+└────────────────────────────────────────────────────┘
+↓
+┌────────────────────────────────────────────────────┐
+│ Facility Access Layer │
+│ - 24/7 security guards │
+│ - Badge readers and PIN access │
+│ - Biometric scanners (e.g., palm/iris) │
+│ - Visitor sign-in and escort policies │
+└────────────────────────────────────────────────────┘
+↓
+┌────────────────────────────────────────────────────┐
+│ Server Room Layer │
+│ - Mantraps and dual authentication doors │
+│ - Rack-level physical locks │
+│ - Zoned access by job role │
+│ - Surveillance inside server areas │
+└────────────────────────────────────────────────────┘
+↓
+┌────────────────────────────────────────────────────┐
+│ Hardware and Data Layer │
+│ - Encrypted storage devices │
+│ - Controlled hardware decommissioning │
+│ - Data-wiping and physical destruction protocols │
+└────────────────────────────────────────────────────┘
