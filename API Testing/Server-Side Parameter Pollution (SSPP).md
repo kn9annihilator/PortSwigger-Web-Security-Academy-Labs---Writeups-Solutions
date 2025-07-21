@@ -5,10 +5,10 @@ Server-side parameter pollution (SSPP) occurs when unvalidated user input is emb
 
 An attacker may exploit SSPP to:
 
-    -Override existing parameters.
+-Override existing parameters.
 
-    -Alter application logic or behavior.
+-Alter application logic or behavior.
 
-    -Bypass access controls.
+-Bypass access controls.
 
-    -Access or manipulate unauthorized data.
+-Access or manipulate unauthorized data.
