@@ -164,3 +164,14 @@ If the backend accepts the last value, this may result in accessing the administ
 - [OWASP Server-Side Parameter Pollution](https://owasp.org/www-community/attacks/Server_Side_Parameter_Pollution)
 - [PortSwigger Web Security Academy](https://portswigger.net/web-security)
 
+   
+
+
+### AMI Types Comparison
+
+| **AMI Type**        | **Description**                                               | **Best For**                            |
+|---------------------|---------------------------------------------------------------|------------------------------------------|
+| **Public AMIs**     | Provided by AWS or the community, accessible by all users     | Basic OS setups, public reference builds |
+| **Private AMIs**    | Visible only to the AWS account that created them             | Internal applications, staging builds    |
+| **Shared AMIs**     | Shared with specific AWS accounts or AWS Organizations        | Cross-account deployments                |
+| **Marketplace AMIs**| Distributed by vendors via AWS Marketplace with licensing     | Enterprise software, firewalls, databases|
