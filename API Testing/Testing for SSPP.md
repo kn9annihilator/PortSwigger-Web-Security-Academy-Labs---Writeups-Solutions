@@ -166,3 +166,12 @@ If the backend accepts the last value, this may result in accessing the administ
 
    
 
+### Product Delivery Methods in AWS Marketplace
+
+| **Delivery Method** | **Description**                                          | **Best For**                            |
+|---------------------|----------------------------------------------------------|------------------------------------------|
+| **AMI**             | Launches as an EC2 instance                              | Server-based apps, firewalls, databases  |
+| **SaaS**            | Hosted by the seller, accessed via web interface or API  | Web apps, APIs, analytics platforms      |
+| **Containers**      | Deployed via Amazon ECS or EKS                           | Microservices, DevOps tools              |
+| **Machine Learning**| Hosted trained models consumed via Amazon SageMaker      | ML model deployment, inference workloads |
+| **Data Products**   | Subscribed datasets accessed via S3, Athena, or APIs     | Financial, geospatial, or health data    |
