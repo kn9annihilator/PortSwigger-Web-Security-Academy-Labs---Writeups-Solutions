@@ -193,8 +193,33 @@ Admin=true
 5. Forward the request
 6. Check the page in the browser
 
-## Quick reminder
 
-Treat session cookies like passwords.
+---
 
-Do not share them publicly. If a session cookie is exposed, log out or restart the lab session.
+# Lab: User role can be modified in user profile
+
+**Difficulty:** Apprentice  
+**Status:** Not solved
+
+## Lab description
+
+The lab has an admin panel at `/admin`.
+
+Only logged-in users with a `roleid` of `2` can access it.
+
+Goal: Access the admin panel and delete the user `carlos`.
+
+Credentials:
+
+```text
+Username: wiener
+Password: peter
+```
+## Solution
+
+1. Logged in using `wiener:peter`
+2. Went to my account and updated my email
+3. Intercepted the email update request in Burp Repeater
+4. Added `"roleid":2` to the JSON body and resent the request
+5. The server accepted the role change
+6. Opened `/admin` and deleted `carlos`
