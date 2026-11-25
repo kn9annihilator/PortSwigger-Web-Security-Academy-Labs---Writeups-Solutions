@@ -223,3 +223,19 @@ Password: peter
 4. Added `"roleid":2` to the JSON body and resent the request
 5. The server accepted the role change
 6. Opened `/admin` and deleted `carlos`
+
+---
+
+# Lab: URL-based access control can be circumvented
+
+**Difficulty:** Practitioner  
+**Status:** Not solved
+
+## Solution
+
+1. Tried to open `/admin` and got blocked by the front-end.
+2. Sent the request to Burp Repeater, changed the URL to `/` and added `X-Original-URL: /invalid`.
+3. Got a not found response, confirming the back-end was using the `X-Original-URL` header.
+4. Changed the header to `X-Original-URL: /admin` and accessed the admin panel.
+5. Added `?username=carlos` to the actual query string and changed the header to `X-Original-URL: /admin/delete`.
+6. Deleted `carlos`.
