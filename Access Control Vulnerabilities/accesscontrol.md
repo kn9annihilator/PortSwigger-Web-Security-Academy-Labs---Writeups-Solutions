@@ -239,3 +239,48 @@ Password: peter
 4. Changed the header to `X-Original-URL: /admin` and accessed the admin panel.
 5. Added `?username=carlos` to the actual query string and changed the header to `X-Original-URL: /admin/delete`.
 6. Deleted `carlos`.
+
+
+
+# User ID controlled by request parameter
+
+**Difficulty:** Apprentice  
+**Status:** Not solved
+
+## Solution
+
+1. Logged in using `wiener:peter` and opened my account page.
+2. Noticed the URL had my username in the `id` parameter.
+3. Sent the request to Burp Repeater.
+4. Changed the `id` parameter to `carlos`.
+5. Retrieved and submitted Carlos's API key.
+
+---
+
+# User ID controlled by request parameter, with unpredictable user IDs
+
+**Difficulty:** Apprentice  
+**Status:** Solved
+
+## Solution
+
+1. Found a blog post by Carlos.
+2. Clicked his name and noted the user ID from the URL.
+3. Logged in using `wiener:peter` and opened my account page.
+4. Replaced my `id` parameter with Carlos's user ID.
+5. Retrieved and submitted his API key.
+
+---
+
+# User ID controlled by request parameter with data leakage in redirect
+
+**Difficulty:** Apprentice  
+**Status:** Not solved
+
+## Solution
+
+1. Logged in using `wiener:peter` and opened my account page.
+2. Sent the request to Burp Repeater.
+3. Changed the `id` parameter to `carlos`.
+4. The response redirected to the home page, but the response body still contained Carlos's API key.
+5. Submitted the API key.
