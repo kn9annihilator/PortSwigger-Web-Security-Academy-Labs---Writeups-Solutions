@@ -198,8 +198,6 @@ Admin=true
 
 # Lab: User role can be modified in user profile
 
-**Difficulty:** Apprentice  
-**Status:** Not solved
 
 ## Lab description
 
@@ -228,9 +226,6 @@ Password: peter
 
 # Lab: URL-based access control can be circumvented
 
-**Difficulty:** Practitioner  
-**Status:** Not solved
-
 ## Solution
 
 1. Tried to open `/admin` and got blocked by the front-end.
@@ -244,9 +239,6 @@ Password: peter
 
 # User ID controlled by request parameter
 
-**Difficulty:** Apprentice  
-**Status:** Not solved
-
 ## Solution
 
 1. Logged in using `wiener:peter` and opened my account page.
@@ -258,9 +250,6 @@ Password: peter
 ---
 
 # User ID controlled by request parameter, with unpredictable user IDs
-
-**Difficulty:** Apprentice  
-**Status:** Solved
 
 ## Solution
 
@@ -274,9 +263,6 @@ Password: peter
 
 # User ID controlled by request parameter with data leakage in redirect
 
-**Difficulty:** Apprentice  
-**Status:** Not solved
-
 ## Solution
 
 1. Logged in using `wiener:peter` and opened my account page.
@@ -284,3 +270,70 @@ Password: peter
 3. Changed the `id` parameter to `carlos`.
 4. The response redirected to the home page, but the response body still contained Carlos's API key.
 5. Submitted the API key.
+
+
+# Lab: User ID controlled by request parameter with password disclosure
+
+## Solution
+
+1. Logged in using `wiener:peter` and opened my account page.
+2. Changed the `id` parameter in the URL to `administrator`.
+3. Checked the response in Burp and found the administrator's password.
+4. Logged in as administrator and deleted `carlos`.
+
+---
+# Insecure direct object references (IDOR)
+
+## What is IDOR?
+
+Insecure direct object references (IDOR) are an access control vulnerability.
+
+It happens when an application uses user input to access objects directly without properly checking permissions.
+
+IDOR is mostly related to horizontal privilege escalation, but it can also lead to vertical privilege escalation.
+
+## IDOR examples
+
+### IDOR with database objects
+
+A website may use a URL like this to access a customer account:
+
+```text
+https://insecure-website.com/customer_account?customer_number=132355
+```
+Here, the customer_number is used to find a record in the database.
+
+If access control is missing, an attacker can change the customer number and access another customer's account.
+
+This can lead to horizontal privilege escalation.
+
+## IDOR with static files
+Sometimes websites store sensitive files on the server using simple filenames.
+
+Example:
+```text
+https://insecure-website.com/static/12144.txt
+```
+
+The file may contain a chat transcript or other user data.
+
+If filenames are predictable, an attacker can change the filename and access files belonging to other users.
+
+These files may contain sensitive information like credentials.
+### Key points
+- IDOR happens when user-controlled input directly references an object
+- Changing an ID or filename may expose another user's data
+- It can lead to horizontal or vertical privilege escalation
+- Always check whether the user is authorized to access the requested object
+
+# Lab: Insecure direct object references
+
+## Solution
+
+1. Opened the **Live chat** tab
+2. Sent a message and clicked **View transcript**
+3. Checked the URL and noticed the transcript filename uses an incrementing number
+4. Changed the filename to `1.txt` and found a password in the chat transcript
+5. Returned to the lab and logged in using Carlos's credentials
+
+---
